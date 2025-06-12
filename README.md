@@ -17,7 +17,7 @@ A detailed and secure step-by-step guide to enable a lightweight graphical deskt
 Update your package list and install XRDP with the lightweight XFCE4 desktop environment:
 
 ```bash
-sudo su && apt update && apt upgrade -y && apt install -y xrdp xfce4 xfce4-goodies
+sudo apt update && apt upgrade -y && apt install -y xrdp xfce4 xfce4-goodies
 ```
 
 ## ⚙️ Step 2: Configure XRDP Server
