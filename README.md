@@ -109,7 +109,7 @@ Expected output includes a line with port `3389` in the `LISTEN` state.
 
 ### 5. Check Firewall Rules (optional)
 ```bash
-sudo ufw allow 3389/tcp
+sudo ufw allow 3389/tcp &&
 sudo ufw reload
 ```
 ### 5. Check if it's allowed (optional)
