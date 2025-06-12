@@ -88,25 +88,34 @@ startxfce4
 Save and exit (`Ctrl + S` then `Ctrl + X`).
 
 ## 🔎 Step 5: Verify Network & XRDP Service
-### ✅ Enable XRDP service
+### 1. Enable XRDP service
 ```bash
 sudo systemctl start xrdp &&
 systemctl enable xrdp
 ```
-### 🌐 Check server’s IP address (optional)
+### 2. Check server’s IP address (optional)
 ```bash
 hostname -I
 ```
-### 📡 Check XRDP listening ports (optional)
+### 3. Check XRDP listening ports (optional)
 ```bash
 sudo netstat -tulpn | grep xrdp
 ```
-### 🔍 Check XRDP service status (optional)
+### 4. Check XRDP service status (optional)
 ```bash
 sudo systemctl status xrdp
 ```
-
 Expected output includes a line with port `3389` in the `LISTEN` state.
+
+### 5. Check Firewall Rules (optional)
+```bash
+sudo ufw allow 3389/tcp
+sudo ufw reload
+```
+### 5. Check if it's allowed (optional)
+```bash
+sudo ufw status
+```
 
 ## 🖧 Step 6: Connect Using Remote Desktop
 
