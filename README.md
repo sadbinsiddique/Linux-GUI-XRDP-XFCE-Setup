@@ -83,12 +83,6 @@ startxfce4
 
 Save and exit (`Ctrl + S` then `Ctrl + X`).
 
-Make sure the script is executable:
-
-```bash
-sudo chmod +x /etc/xrdp/startwm.sh
-```
-
 ## 🔎 Step 5: Verify Network & XRDP Service
 
 Check your server’s IP address:
