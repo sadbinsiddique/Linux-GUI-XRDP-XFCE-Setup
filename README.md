@@ -12,7 +12,7 @@ A detailed and secure step-by-step guide to enable a lightweight graphical deskt
 
 > **Note for WSL2 users:** Ensure WSL version 2 is enabled. Networking in WSL2 might require connecting via `localhost` with port forwarding or using your Windows host IP address.
 
-## 📦 Step 1: Install XRDP and XFCE4
+## 📦 Step 1: Install XRDP, XFCE4 and net-tools
 
 Update your package list and install XRDP with the lightweight XFCE4 desktop environment:
 
