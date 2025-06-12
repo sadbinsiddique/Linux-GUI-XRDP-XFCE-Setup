@@ -185,5 +185,5 @@ Contributions, bug reports, and suggestions are welcome! Please open an issue or
 
 ---
 
-© 2025 | Linux Remote Access Guide  
+© 2025 | Linux-GUI-XRDP-XFCE-Setup
 Author: [sadbinsiddique](https://github.com/sadbinsiddique)
