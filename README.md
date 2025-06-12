@@ -117,7 +117,7 @@ sudo ufw enable
 ```bash
 sudo netstat -tulpn | grep xrdp && hostname -I && systemctl status xrdp
 ```
-Expected output includes a line with port `3389` in the `LISTEN` state.
+Expected output includes a line with port `3390` in the `LISTEN` state.
 
 
 
@@ -127,14 +127,14 @@ Expected output includes a line with port `3389` in the `LISTEN` state.
 
 - Press (`Ctrl + R`) to open the Run dialog.
 - Type (`mstsc.exe`).  
-- Enter your Linux machine’s IP address followed by (for example, `192.XXX.X.XXX:3389`).
+- Enter your Linux machine’s IP address followed by (for example, `172.30.255.105:3390`).
 - Click Connect. 
 - Log in using your **Linux username** and **password**.
-
+![linux](images/linux.png)
 ### ☑️ From Linux/macOS:
 
 - Use **Remmina**, **KRDC** or another RDP client.
-- Enter your Linux machine’s IP address followed by (for example, `192.XXX.X.XXX:3389`).
+- Enter your Linux machine’s IP address followed by (for example, `172.30.255.105:3390`).
 - Connect and log in with your Linux credentials.
 
 ## ⚠️ Troubleshooting Tips
