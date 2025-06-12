@@ -130,6 +130,7 @@ Expected output includes a line with port `3390` in the `LISTEN` state.
 - Enter your Linux machine’s IP address followed by (for example, `172.30.255.105:3390`).
 - Click Connect. 
 - Log in using your **Linux username** and **password**.
+![XRDP](https://miro.medium.com/v2/resize:fit:2000/format:webp/1*PGsdteasOyyJCAMNkVxJyw.png)
 ![linux](images/linux.png)
 ### ☑️ From Linux/macOS:
 
