@@ -1,17 +1,9 @@
 # Linux GUI Setup Guide (WSL2)
-
-This guide provides a comprehensive, professional walkthrough for setting up a lightweight **Linux GUI environment** using **XRDP** and **XFCE4**, enabling secure **Remote Desktop Access** to your Linux system.
-
 ---
-
-## 📋 Prerequisites
-
+## 📋 Prerequisite
 - A running Ubuntu/Debian-based Linux server
 - Root or sudo privileges
 - Stable internet connection
-
----
-
 ## 📦 Step 1: Install XRDP and XFCE4
 
 Update packages and install XRDP with XFCE4 (a lightweight desktop environment):
