@@ -4,7 +4,7 @@
 A detailed and secure step-by-step guide to enable a lightweight graphical desktop environment accessible remotely via XRDP on Ubuntu or Windows Subsystem for Linux 2 (WSL2). Perfect for users wanting a stable remote desktop experience.
 
 
-## 📋 Prerequisites
+## Prerequisites
 
 - Running Ubuntu or Debian-based Linux server (native or WSL2)  
 - Root or sudo privileges  
@@ -12,7 +12,9 @@ A detailed and secure step-by-step guide to enable a lightweight graphical deskt
 
 > **Note for WSL2 users:** Ensure WSL version 2 is enabled. Networking in WSL2 might require connecting via `localhost` with port forwarding or using your Windows host IP address.
 
-## 📦 Step 1: Install Tools
+![XRDP](https://miro.medium.com/v2/resize:fit:2000/format:webp/1*PGsdteasOyyJCAMNkVxJyw.png)
+![linux](images/linux.png)
+## Step 1: Install Tools
 
 ```bash
 sudo apt update &&
@@ -26,7 +28,7 @@ apt install -y net-tools ufw
 - Installs `XRDP` and the `XFCE` desktop environment with extras
 - installs `net-tools` (for commands like netstat) and `ufw` (firewall management)
 
-## ⚙️ Step 2: Configure XRDP Server
+## Step 2: Configure XRDP Server
 
 ### Backup the default XRDP configuration file
 
@@ -44,7 +46,7 @@ sudo sed -i 's/max_bpp=32/#max_bpp=32\nmax_bpp=128/g' /etc/xrdp/xrdp.ini &&
 sed -i 's/xserverbpp=24/#xserverbpp=24\nxserverbpp=128/g' /etc/xrdp/xrdp.ini
 ```
 
-## 🖥️ Step 3: Set XFCE as the Default Session
+## Step 3: Set XFCE as the Default Session
 
 Set XFCE4 as the default desktop session for XRDP connections:
 
@@ -52,7 +54,7 @@ Set XFCE4 as the default desktop session for XRDP connections:
 echo xfce4-session > ~/.xsession
 ```
 
-## 🛠️ Step 4: Edit XRDP Startup Script
+## Step 4: Edit XRDP Startup Script
 
 Edit the startup script to launch the XFCE desktop environment:
 
@@ -87,13 +89,13 @@ startxfce4
 
 Save and exit (`Ctrl + S` then `Ctrl + X`).
 
-## 🔎 Step 5: Verify Network & XRDP Service
-### 1. Enable XRDP service
+## Step 5: Verify Network & XRDP Service
+### Enable XRDP service
 ```bash
 sudo systemctl start xrdp &&
 systemctl enable xrdp
 ```
-### 2. Check Firewall Rules 
+### Check Firewall Rules 
 ```bash
 sudo ufw allow 3389/tcp &&
 sudo ufw allow ssh &&
@@ -104,16 +106,16 @@ sudo ufw reload
 - Opens port 22 for SSH access.
 - Reloads firewall rules to apply changes.
 
-### 3. Check Firewall Status
+### Check Firewall Status
 ```bash
 sudo ufw status
 ```
-### 4. If Firewall not enabled (optional) 
+### If Firewall not enabled (optional) 
 ```bash
 sudo ufw enable
 ```
 
-### 5. Check server’s IP address, XRDP listening ports & XRDP service status 
+### Check server’s IP address, XRDP listening ports & XRDP service status 
 ```bash
 sudo netstat -tulpn | grep xrdp && hostname -I && systemctl status xrdp
 ```
@@ -121,24 +123,20 @@ Expected output includes a line with port `3390` in the `LISTEN` state.
 
 
 
-## 🖧 Step 6: Connect Using Remote Desktop
+## Step 6: Connect Using Remote Desktop
 
-### ☑️ From Windows:
-
+### For Windows
 - Press (`Ctrl + R`) to open the Run dialog.
 - Type (`mstsc.exe`).  
 - Enter your Linux machine’s IP address followed by (for example, `172.XX.XXX.XXX:3390`).
 - Click Connect. 
 - Log in using your **Linux username** and **password**.
-![XRDP](https://miro.medium.com/v2/resize:fit:2000/format:webp/1*PGsdteasOyyJCAMNkVxJyw.png)
-![linux](images/linux.png)
-### ☑️ From Linux/macOS:
-
+### For Linux/macOS
 - Use **Remmina**, **KRDC** or another RDP client.
-- Enter your Linux machine’s IP address followed by (for example, `172.30.255.105:3390`).
+- Enter your Linux machine’s IP address followed by (for example, `172.XX.XXX.XXX:3390`).
 - Connect and log in with your Linux credentials.
 
-## ⚠️ Troubleshooting Tips
+## Troubleshooting Tips
 
 - If the session closes immediately after login, ensure your `~/.xsession` file contains only:  
   ```
@@ -151,13 +149,7 @@ Expected output includes a line with port `3390` in the `LISTEN` state.
 - If remote connection fails, check firewall rules on both Linux and Windows.
 - Keyboard layout and clipboard redirection may require additional configuration.
 
-## ⚠️ Known Issues
-
-- Clipboard and audio forwarding support is limited with XRDP by default.
-- Keyboard layouts may not always match and may require manual tweaks.
-- Multi-user environments may require advanced configuration.
-
-## 📚 References
+## References
 
 - [XFCE Desktop Environment](https://xfce.org/)  
 - [Ubuntu Official Documentation](https://help.ubuntu.com/)  
