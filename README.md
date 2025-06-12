@@ -118,14 +118,14 @@ Expected output includes a line with port `3390` in the `LISTEN` state.
 ### From Windows:
 
 - Open **Remote Desktop Connection** (`mstsc.exe`).  
-- Enter your Linux machine’s IP address followed by `:3390` (for example, `192.168.1.100:3390`).  
+- Enter your Linux machine’s IP address followed by `:3390` (for example, `192.XXX.X.XXX:3390`).  
 - Log in using your Linux username and password.
 
 ### From Linux/macOS:
 
 - Use **Remmina** or another RDP client with the same IP and port.
 
-## 🧯 Step 7: Configure Firewall (UFW)
+## 🧯 Step 7: Configure Firewall (optional)
 
 Allow the XRDP port through your firewall:
 
