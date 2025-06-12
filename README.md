@@ -84,14 +84,7 @@ startxfce4
 Save and exit (`Ctrl + S` then `Ctrl + X`).
 
 ## 🔎 Step 5: Verify Network & XRDP Service
-
-Check your server’s IP address:
-
-```bash
-hostname -I
-```
-
-Start and enable XRDP service on boot:
+### Start and enable XRDP service on boot:
 
 ```bash
 sudo systemctl start xrdp
@@ -103,8 +96,11 @@ sudo systemctl enable xrdp
 sudo systemctl status xrdp
 ```
 
-Confirm XRDP is listening on the new port 3390:
-
+### Check server’s IP address
+```bash
+hostname -I
+```
+### Check XRDP port
 ```bash
 sudo netstat -tulpn | grep xrdp
 ```
