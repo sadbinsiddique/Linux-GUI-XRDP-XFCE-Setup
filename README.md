@@ -19,7 +19,8 @@ Update your package list and install XRDP with the lightweight XFCE4 desktop env
 ```bash
 sudo apt update &&
 apt upgrade -y &&
-apt install -y xrdp xfce4 xfce4-goodies
+apt install -y xrdp xfce4 xfce4-goodies &&
+apt install -y net-tools
 ```
 
 ## ⚙️ Step 2: Configure XRDP Server
