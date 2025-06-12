@@ -3,17 +3,16 @@
 
 A detailed and secure step-by-step guide to enable a lightweight graphical desktop environment accessible remotely via XRDP on Ubuntu or Windows Subsystem for Linux 2 (WSL2). Perfect for users wanting a stable remote desktop experience.
 
+![XRDP](https://miro.medium.com/v2/resize:fit:2000/format:webp/1*PGsdteasOyyJCAMNkVxJyw.png)
+![linux](images/linux.png)
 
 ## Prerequisites
 
-- Running Ubuntu or Debian-based Linux server (native or WSL2)  
+- Running Ubuntu or Debian-based Linux server (Only For Windows `wsl --list --online` then `wsl --install -d <Distribution Name>`)
 - Root or sudo privileges  
 - Stable internet connection  
 
 > **Note for WSL2 users:** Ensure WSL version 2 is enabled. Networking in WSL2 might require connecting via `localhost` with port forwarding or using your Windows host IP address.
-
-![XRDP](https://miro.medium.com/v2/resize:fit:2000/format:webp/1*PGsdteasOyyJCAMNkVxJyw.png)
-![linux](images/linux.png)
 ## Step 1: Install Tools
 
 ```bash
@@ -128,12 +127,12 @@ Expected output includes a line with port `3390` in the `LISTEN` state.
 ### For Windows
 - Press (`Ctrl + R`) to open the Run dialog.
 - Type (`mstsc.exe`).  
-- Enter your Linux machine’s IP address followed by (for example, `172.XX.XXX.XXX:3390`).
+- Enter your Linux machine’s IP address followed by (for example, `localhost:3390` or `server ip address:3390`).
 - Click Connect. 
 - Log in using your **Linux username** and **password**.
 ### For Linux/macOS
 - Use **Remmina**, **KRDC** or another RDP client.
-- Enter your Linux machine’s IP address followed by (for example, `172.XX.XXX.XXX:3390`).
+- Enter your Linux machine’s IP address followed by (for example, `localhost:3390` or `server ip address:3390`).
 - Connect and log in with your Linux credentials.
 
 ## Troubleshooting Tips
