@@ -93,29 +93,33 @@ Save and exit (`Ctrl + S` then `Ctrl + X`).
 sudo systemctl start xrdp &&
 systemctl enable xrdp
 ```
-### 2. Check server’s IP address (optional)
-```bash
-hostname -I
-```
-### 3. Check XRDP listening ports (optional)
-```bash
-sudo netstat -tulpn | grep xrdp
-```
-### 4. Check XRDP service status (optional)
-```bash
-sudo systemctl status xrdp
-```
-Expected output includes a line with port `3389` in the `LISTEN` state.
-
-### 5. Check Firewall Rules (optional)
+### 2. Check Firewall Rules 
 ```bash
 sudo ufw allow 3389/tcp &&
 sudo ufw reload
 ```
-### 5. Check if it's allowed (optional)
+### 3. Check Firewall Status
 ```bash
 sudo ufw status
 ```
+### 4. If Firewall not enabled (optional) 
+
+#### Firewall
+```bash
+sudo ufw enable
+```
+#### Firewall + SSH
+```bash
+sudo ufw allow ssh
+sudo ufw enable
+```
+### 5. Check server’s IP address, XRDP listening ports & XRDP service status 
+```bash
+sudo netstat -tulpn | grep xrdp && hostname -I && systemctl status xrdp
+```
+Expected output includes a line with port `3389` in the `LISTEN` state.
+
+
 
 ## 🖧 Step 6: Connect Using Remote Desktop
 
@@ -123,7 +127,7 @@ sudo ufw status
 
 - Press (`Ctrl + R`) to open the Run dialog.
 - Type (`mstsc.exe`).  
-- Enter your Linux machine’s IP address followed by (for example, `192.XXX.X.XXX:3389` or `192.XXX.X.XXX:3390`).
+- Enter your Linux machine’s IP address followed by (for example, `192.XXX.X.XXX:3389`).
 - Click Connect. 
 - Log in using your **Linux username** and **password**.
 
