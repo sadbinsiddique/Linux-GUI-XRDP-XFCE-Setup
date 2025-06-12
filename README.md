@@ -103,7 +103,7 @@ sudo netstat -tulpn | grep xrdp
 sudo systemctl status xrdp
 ```
 
-Expected output includes a line with port `3390` in the `LISTEN` state.
+Expected output includes a line with port `3389` in the `LISTEN` state.
 
 ## 🖧 Step 6: Connect Using Remote Desktop
 
@@ -118,7 +118,7 @@ Expected output includes a line with port `3390` in the `LISTEN` state.
 ### ☑️ From Linux/macOS:
 
 - Use **Remmina**, **KRDC** or another RDP client.
-- Enter your Linux machine’s IP address followed by (for example, `192.XXX.X.XXX:3389` or `192.XXX.X.XXX:3390`).
+- Enter your Linux machine’s IP address followed by (for example, `192.XXX.X.XXX:3389`).
 - Connect and log in with your Linux credentials.
 
 ## ⚠️ Troubleshooting Tips
