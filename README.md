@@ -24,13 +24,11 @@ apt install -y xrdp xfce4 xfce4-goodies
 
 ## ⚙️ Step 2: Configure XRDP Server
 
-Backup the default XRDP configuration file:
+### Backup the default XRDP configuration file:
 
 ```bash
 sudo cp /etc/xrdp/xrdp.ini /etc/xrdp/xrdp.ini.bak
 ```
-
-Modify the XRDP configuration to change the port and increase color depth:
 
 ### Port configuration
 ```bash
