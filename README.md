@@ -107,15 +107,19 @@ Expected output includes a line with port `3390` in the `LISTEN` state.
 
 ## 🖧 Step 6: Connect Using Remote Desktop
 
-### From Windows:
+### 💻 From Windows:
 
-- Open **Remote Desktop Connection** (`mstsc.exe`).  
-- Enter your Linux machine’s IP address followed by `:3390` (for example, `192.XXX.X.XXX:3390`).  
-- Log in using your Linux username and password.
+- Press (`Ctrl + R`) to open the Run dialog.
+- Type (`mstsc.exe`).  
+- Enter your Linux machine’s IP address followed by (for example, `192.XXX.X.XXX:3389` or `192.XXX.X.XXX:3390`).
+- Click Connect. 
+- Log in using your **Linux username** and **password**.
 
 ### From Linux/macOS:
 
-- Use **Remmina** or another RDP client with the same IP and port.
+- Use **Remmina**, **KRDC** or another RDP client.
+- Enter your Linux machine’s IP address followed by (for example, `192.XXX.X.XXX:3389` or `192.XXX.X.XXX:3390`).
+- Connect and log in with your Linux credentials.
 
 ## ⚠️ Troubleshooting Tips
 
