@@ -19,7 +19,7 @@ Update your package list and install XRDP with the lightweight XFCE4 desktop env
 ```bash
 sudo su
 apt update && apt upgrade -y
-apt install -y xrdp xfce4
+apt install -y xrdp xfce4 xfce4-goodies
 ```
 
 ## ⚙️ Step 2: Configure XRDP Server
@@ -27,17 +27,15 @@ apt install -y xrdp xfce4
 Backup the default XRDP configuration file:
 
 ```bash
-cp /etc/xrdp/xrdp.ini /etc/xrdp/xrdp.ini.bak
+sudo cp /etc/xrdp/xrdp.ini /etc/xrdp/xrdp.ini.bak
 ```
 
 Modify the XRDP configuration to change the port and increase color depth:
 
 ```bash
-sed -i 's/3389/3390/g' /etc/xrdp/xrdp.ini
-sed -i 's/max_bpp=32/#max_bpp=32
-max_bpp=128/g' /etc/xrdp/xrdp.ini
-sed -i 's/xserverbpp=24/#xserverbpp=24
-xserverbpp=128/g' /etc/xrdp/xrdp.ini
+sudo sed -i 's/3389/3390/g' /etc/xrdp/xrdp.ini
+sudo sed -i 's/max_bpp=32/#max_bpp=32\max_bpp=128/g' /etc/xrdp/xrdp.ini
+sudo sed -i 's/xserverbpp=24/#xserverbpp=24\xserverbpp=128/g' /etc/xrdp/xrdp.ini
 ```
 
 ## 🖥️ Step 3: Set XFCE as the Default Session
