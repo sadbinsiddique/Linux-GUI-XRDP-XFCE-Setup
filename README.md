@@ -1,5 +1,5 @@
 
-# Linux GUI Setup Guide for XRDP + XFCE4 on Ubuntu/WSL2
+# Linux GUI Setup Guide
 
 A detailed and secure step-by-step guide to enable a lightweight graphical desktop environment accessible remotely via XRDP on Ubuntu or Windows Subsystem for Linux 2 (WSL2). Perfect for users wanting a stable remote desktop experience.
 
