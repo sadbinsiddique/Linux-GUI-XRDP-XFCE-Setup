@@ -101,7 +101,11 @@ Start and enable XRDP service on boot:
 
 ```bash
 sudo systemctl start xrdp
+```
+```bash
 sudo systemctl enable xrdp
+```
+```bash
 sudo systemctl status xrdp
 ```
 
