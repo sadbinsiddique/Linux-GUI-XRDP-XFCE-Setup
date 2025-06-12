@@ -3,7 +3,6 @@
 
 A detailed and secure step-by-step guide to enable a lightweight graphical desktop environment accessible remotely via XRDP on Ubuntu or Windows Subsystem for Linux 2 (WSL2). Perfect for users wanting a stable remote desktop experience.
 
----
 
 ## 📋 Prerequisites
 
@@ -12,8 +11,6 @@ A detailed and secure step-by-step guide to enable a lightweight graphical deskt
 - Stable internet connection  
 
 > **Note for WSL2 users:** Ensure WSL version 2 is enabled. Networking in WSL2 might require connecting via `localhost` with port forwarding or using your Windows host IP address.
-
----
 
 ## 📦 Step 1: Install XRDP and XFCE4
 
@@ -24,8 +21,6 @@ sudo su
 apt update && apt upgrade -y
 apt install -y xrdp xfce4
 ```
-
----
 
 ## ⚙️ Step 2: Configure XRDP Server
 
@@ -45,8 +40,6 @@ sed -i 's/xserverbpp=24/#xserverbpp=24
 xserverbpp=128/g' /etc/xrdp/xrdp.ini
 ```
 
----
-
 ## 🖥️ Step 3: Set XFCE as the Default Session
 
 Set XFCE4 as the default desktop session for XRDP connections:
@@ -54,8 +47,6 @@ Set XFCE4 as the default desktop session for XRDP connections:
 ```bash
 echo xfce4-session > ~/.xsession
 ```
-
----
 
 ## 🛠️ Step 4: Edit XRDP Startup Script
 
@@ -69,12 +60,24 @@ Replace the content with the following:
 
 ```bash
 #!/bin/sh
+# xrdp X session start script (c) 2015, 2017, 2021 mirabilos
+# published under The MirOS Licence
+
+# Rely on /etc/pam.d/xrdp-sesman using pam_env to load both
+# /etc/environment and /etc/default/locale to initialise the
+# locale and the user environment properly.
+
 if test -r /etc/profile; then
-  . /etc/profile
+        . /etc/profile
 fi
+
 if test -r ~/.profile; then
-  . ~/.profile
+        . ~/.profile
 fi
+
+#test -x /etc/X11/Xsession && exec /etc/X11/Xsession
+#exec /bin/sh /etc/X11/Xsession
+#xfce
 startxfce4
 ```
 
@@ -85,8 +88,6 @@ Make sure the script is executable:
 ```bash
 sudo chmod +x /etc/xrdp/startwm.sh
 ```
-
----
 
 ## 🔎 Step 5: Verify Network & XRDP Service
 
@@ -112,8 +113,6 @@ sudo netstat -tulpn | grep xrdp
 
 Expected output includes a line with port `3390` in the `LISTEN` state.
 
----
-
 ## 🖧 Step 6: Connect Using Remote Desktop
 
 ### From Windows:
@@ -126,8 +125,6 @@ Expected output includes a line with port `3390` in the `LISTEN` state.
 
 - Use **Remmina** or another RDP client with the same IP and port.
 
----
-
 ## 🧯 Step 7: Configure Firewall (UFW)
 
 Allow the XRDP port through your firewall:
@@ -137,8 +134,6 @@ sudo ufw allow 3390/tcp
 sudo ufw enable
 sudo ufw status
 ```
-
----
 
 ## ⚠️ Troubleshooting Tips
 
@@ -153,15 +148,11 @@ sudo ufw status
 - If remote connection fails, check firewall rules on both Linux and Windows.
 - Keyboard layout and clipboard redirection may require additional configuration.
 
----
-
 ## ⚠️ Known Issues
 
 - Clipboard and audio forwarding support is limited with XRDP by default.
 - Keyboard layouts may not always match and may require manual tweaks.
 - Multi-user environments may require advanced configuration.
-
----
 
 ## 📚 References
 
@@ -171,18 +162,10 @@ sudo ufw status
 - [Microsoft Remote Desktop Documentation](https://support.microsoft.com/en-us/windows/how-to-use-remote-desktop-5fe128d5-8fb1-7a23-3b8a-41e636865e8c)  
 - [Windows Subsystem for Linux (WSL2)](https://learn.microsoft.com/en-us/windows/wsl/)
 
----
-
 ## License
 
-This guide is published under The MirOS Licence.
-
----
+This guide is published under The [MIT Licence](https://choosealicense.com/licenses/mit/).
 
 ## Contributions
 
 Contributions, bug reports, and suggestions are welcome! Please open an issue or pull request on the [GitHub repository](https://github.com/sadbinsiddique/Linux-GUI-XRDP-XFCE-Setup).
-
----
-
-© 2025 | Linux-GUI-XRDP-XFCE-Setup
