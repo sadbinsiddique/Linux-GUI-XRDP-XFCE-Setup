@@ -117,16 +117,6 @@ Expected output includes a line with port `3390` in the `LISTEN` state.
 
 - Use **Remmina** or another RDP client with the same IP and port.
 
-## 🧯 Step 7: Configure Firewall (optional)
-
-Allow the XRDP port through your firewall:
-
-```bash
-sudo ufw allow 3390/tcp
-sudo ufw enable
-sudo ufw status
-```
-
 ## ⚠️ Troubleshooting Tips
 
 - If the session closes immediately after login, ensure your `~/.xsession` file contains only:  
