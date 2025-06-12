@@ -32,10 +32,14 @@ sudo cp /etc/xrdp/xrdp.ini /etc/xrdp/xrdp.ini.bak
 
 Modify the XRDP configuration to change the port and increase color depth:
 
+Port configuration
 ```bash
 sudo sed -i 's/3389/3390/g' /etc/xrdp/xrdp.ini
-sudo sed -i 's/max_bpp=32/#max_bpp=32\max_bpp=128/g' /etc/xrdp/xrdp.ini
-sudo sed -i 's/xserverbpp=24/#xserverbpp=24\xserverbpp=128/g' /etc/xrdp/xrdp.ini
+```
+screen scaling and color
+```bash
+sudo sed -i 's/max_bpp=32/#max_bpp=32\nmax_bpp=128/g' /etc/xrdp/xrdp.ini &&
+sed -i 's/xserverbpp=24/#xserverbpp=24\nxserverbpp=128/g' /etc/xrdp/xrdp.ini
 ```
 
 ## 🖥️ Step 3: Set XFCE as the Default Session
