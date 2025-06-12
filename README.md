@@ -1,5 +1,7 @@
 # Linux GUI Setup Guide (WSL2)
----
+
+Personal setup guide for enabling a secure Linux GUI using XRDP and XFCE4 on Ubuntu/WSL2.
+
 ## 📋 Prerequisite
 - A running Ubuntu/Debian-based Linux server
 - Root or sudo privileges
