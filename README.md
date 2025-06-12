@@ -181,7 +181,7 @@ This guide is published under The MirOS Licence.
 
 ## Contributions
 
-Contributions, bug reports, and suggestions are welcome! Please open an issue or pull request on the [GitHub repository](https://github.com/sadbinsiddique).
+Contributions, bug reports, and suggestions are welcome! Please open an issue or pull request on the [GitHub repository](https://github.com/sadbinsiddique/Linux-GUI-XRDP-XFCE-Setup).
 
 ---
 
