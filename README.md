@@ -8,7 +8,7 @@ A detailed and secure step-by-step guide to enable a lightweight graphical deskt
 
 ## Prerequisites
 
-- Running Ubuntu or Debian-based Linux server (Only For Windows `wsl --list --online` then `wsl --install -d <Distribution Name>`)
+- Running Linux server (Only For Windows `wsl --list --online` then `wsl --install -d <Distribution Name>`)
 - Root or sudo privileges  
 - Stable internet connection  
 
