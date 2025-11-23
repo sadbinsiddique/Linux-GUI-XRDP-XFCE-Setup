@@ -22,7 +22,7 @@ sudo apt update && sudo apt upgrade -y && sudo apt install -y xrdp xfce4 xfce4-g
 - Updates package list
 - Upgrades installed packages
 - Installs `XRDP` and the `XFCE` desktop environment with extras
-- installs `net-tools` (for commands like netstat) and `ufw` (firewall management)
+- Installs `net-tools` (for commands like netstat) and `ufw` (firewall management)
 
 ## Step 2: Configure XRDP Server
 
