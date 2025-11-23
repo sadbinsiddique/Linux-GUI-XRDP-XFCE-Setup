@@ -91,10 +91,10 @@ sudo systemctl start xrdp && sudo systemctl enable xrdp
 ```
 ### Check Firewall Rules 
 ```bash
-sudo ufw allow 3389/tcp && sudo ufw allow ssh && sudo ufw reload
+sudo ufw allow 3390/tcp && sudo ufw allow ssh && sudo ufw reload
 ```
 #### What it does
-- Opens port 3389 for Remote Desktop (XRDP).
+- Opens port 3390 for Remote Desktop (XRDP).
 - Opens port 22 for SSH access.
 - Reloads firewall rules to apply changes.
 
