@@ -16,16 +16,13 @@ A detailed and secure step-by-step guide to enable a lightweight graphical deskt
 ## Step 1: Install Tools
 
 ```bash
-sudo apt update &&
-apt upgrade -y &&
-apt install -y xrdp xfce4 xfce4-goodies &&
-apt install -y net-tools ufw
+sudo apt update && sudo apt upgrade -y && sudo apt install -y xrdp xfce4 xfce4-goodies net-tools ufw
 ```
 #### What it does
 - Updates package list
 - Upgrades installed packages
 - Installs `XRDP` and the `XFCE` desktop environment with extras
-- installs `net-tools` (for commands like netstat) and `ufw` (firewall management)
+- Installs `net-tools` (for commands like netstat) and `ufw` (firewall management)
 
 ## Step 2: Configure XRDP Server
 
@@ -41,8 +38,7 @@ sudo sed -i 's/3389/3390/g' /etc/xrdp/xrdp.ini
 ```
 ### XRDP screen scaling and color
 ```bash
-sudo sed -i 's/max_bpp=32/#max_bpp=32\nmax_bpp=128/g' /etc/xrdp/xrdp.ini &&
-sed -i 's/xserverbpp=24/#xserverbpp=24\nxserverbpp=128/g' /etc/xrdp/xrdp.ini
+sudo sed -i -e 's/max_bpp=32/#max_bpp=32\nmax_bpp=128/g' -e 's/xserverbpp=24/#xserverbpp=24\nxserverbpp=128/g' /etc/xrdp/xrdp.ini
 ```
 
 ## Step 3: Set XFCE as the Default Session
@@ -91,17 +87,14 @@ Save and exit (`Ctrl + S` then `Ctrl + X`).
 ## Step 5: Verify Network & XRDP Service
 ### Enable XRDP service
 ```bash
-sudo systemctl start xrdp &&
-systemctl enable xrdp
+sudo systemctl start xrdp && sudo systemctl enable xrdp
 ```
 ### Check Firewall Rules 
 ```bash
-sudo ufw allow 3389/tcp &&
-sudo ufw allow ssh &&
-sudo ufw reload
+sudo ufw allow 3390/tcp && sudo ufw allow ssh && sudo ufw reload
 ```
 #### What it does
-- Opens port 3389 for Remote Desktop (XRDP).
+- Opens port 3390 for Remote Desktop (XRDP).
 - Opens port 22 for SSH access.
 - Reloads firewall rules to apply changes.
 
@@ -116,7 +109,7 @@ sudo ufw enable
 
 ### Check server’s IP address, XRDP listening ports & XRDP service status 
 ```bash
-sudo netstat -tulpn | grep xrdp && hostname -I && systemctl status xrdp
+sudo netstat -tulpn | grep xrdp && hostname -I && sudo systemctl status xrdp
 ```
 Expected output includes a line with port `3390` in the `LISTEN` state.
 
